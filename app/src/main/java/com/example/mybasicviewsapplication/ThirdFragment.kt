@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.mybasicviewsapplication.databinding.FragmentSecondBinding
 import com.example.mybasicviewsapplication.databinding.FragmentThirdBinding
@@ -46,7 +47,8 @@ class ThirdFragment : Fragment() {
         binding.listView.setOnItemClickListener { parent, view, position, id ->
             val item = stringList[position]
             Log.v("LISTVIEW","Item clicked: $item")
-            findNavController().navigate(R.id.action_thirdFragment_to_fourthFragment)
+            val bundle = bundleOf("index" to position)
+            findNavController().navigate(R.id.action_thirdFragment_to_fourthFragment, bundle)
         }
     }
 
