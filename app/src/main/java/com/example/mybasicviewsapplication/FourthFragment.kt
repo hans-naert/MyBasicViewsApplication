@@ -6,14 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.mybasicviewsapplication.databinding.FragmentFirstBinding
+import com.example.mybasicviewsapplication.databinding.FragmentFourthBinding
+import com.example.mybasicviewsapplication.databinding.FragmentSecondBinding
 
 /**
- * A simple [Fragment] subclass as the default destination in the navigation.
+ * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class FourthFragment : Fragment() {
 
-    private var _binding: FragmentFirstBinding? = null
+    private var _binding: FragmentFourthBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,7 +25,7 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        _binding = FragmentFourthBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -32,8 +33,8 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_thirdFragment)
+        binding.buttonFourth.setOnClickListener {
+            findNavController().navigate(R.id.action_fourthFragment_to_thirdFragment)
         }
     }
 
